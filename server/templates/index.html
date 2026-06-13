@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PDF Result Template</title>
+    <style>
+      .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica';
+      }
+      .margin-top {
+        margin-top: 50px;
+      }
+      .justify-center {
+        text-align: center;
+      }
+      .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+      }
+      .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+      }
+      .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+      }
+      .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+      }
+      .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+      }
+      .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+      }
+      .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+      }
+      .invoice-box table tr.details td {
+        padding-bottom: 20px;
+      }
+      .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+      }
+      .invoice-box table tr.item.last td {
+        border-bottom: none;
+      }
+      .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+      }
+      @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+        .invoice-box table tr.information table td {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-box">
+      <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td class="title">
+                  <img
+                    src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
+                    style="width: 100%; max-width: 156px"
+                  />
+                </td>
+                <td>INVOICE:{{invoiceData.invoice_number}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr class="information">
+          <td colspan="2">
+            <table>
+              <tr>
+                <td>Bill To: {{invoiceData.billing_to_name}}</td>
+                <td>Ship To: {{invoiceData.shipping_to_name}}</td>
+                <td>Date: {{invoiceData.date}}</td>
+                <td>Payment Terms: {{invoiceData.payment_terms}}</td>
+                <td>Due Date: {{invoiceData.due_date}}</td>
+                <td>PO Number: {{invoiceData.po_number}}</td>
+                <td>Balance Due: {{invoiceData.due_amount}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr class="heading">
+          <td>items</td>
+          <td>Quantity</td>
+          <td>Rate</td>
+          <td>Amount</td>
+        </tr>
+        <td class="item">{{invoiceData.items.product_name}}</td>
+        <td class="item">{{invoiceData.items.quantity}}</td>
+        <td class="item">{{invoiceData.items.rate_amount}}</td>
+        <td class="item">{{invoiceData.items.total_amount}}</td>
+      </table>
+      <br />
+      <h4 class="justify-content-right">Subtotal: {{invoiceData.subtotal}}$</h4>
+      <h4 class="justify-left">Discount: {{invoiceData.discount}}$</h4>
+      <h4 class="justify-left">Tax: {{invoiceData.tax}}$</h4>
+      <h4 class="justify-left">Shipping: {{invoiceData.shipping_charge}}$</h4>
+      <h4 class="justify-left">Total: {{invoiceData.total_amount}}$</h4>
+      <h4 class="justify-left">Amount Paid: {{invoiceData.paid_amount}}$</h4>
+    </div>
+  </body>
+</html>

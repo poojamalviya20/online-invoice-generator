@@ -1,0 +1,8 @@
+{
+    "HELLO": "World",
+    "WELCOME": "Hello",
+    "PAGE_HOME": {
+        "TITLE": "Home to this",
+        "SUBTITLE": "this is the home page"
+    }
+}
