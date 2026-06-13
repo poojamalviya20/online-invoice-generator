@@ -1,0 +1,9 @@
+{
+    "WELCOME": "Welcome to Invoice Generator application!",
+    "HELLO" : "Invoice get message",
+    "INVOICE_NOT_FOUND": "This invoice id doesn't exist",
+    "PDF_NOT_FOUND" : "PDF file not found.",
+    "EMAIL_SENT" : "Email send successfully please check your mail.",
+    "INVOICE_SAVE" : "Invoice created successfully"
+
+}

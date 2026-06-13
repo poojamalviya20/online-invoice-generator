@@ -1,0 +1,12 @@
+export const SEQUELIZE = 'SEQUELIZE';
+export const DEVELOPMENT = 'development';
+export const TEST = 'test';
+export const PRODUCTION = 'production';
+export const INVOICE_REPOSITORY = 'INVOICE_REPOSITORY';
+export const INVOICE_ITEM_REPOSITORY = 'INVOICE_ITEM_REPOSITORY';
+export const USER_AGENT_REPOSITORY = 'USER_AGENT_REPOSITORY';
+export const UPLOAD_PATH = 'public/invoices/logo'
+export const USER_AGENT_INVOICES_REPOSITORY = 'USER_AGENT_INVOICES_REPOSITORY'
+export const PDF_UPLOAD_PATH = 'public/invoices/files'
+export const INVOICE_ANALYTICS_REPOSITORY = 'INVOICE_ANALYTICS_REPOSITORY';
+export const INVOICE_SENTS_REPOSITORY = 'INVOICE_SENTS_REPOSITORY';
